@@ -1,37 +1,38 @@
 [
   {
-    "experiment": "compact_mlp_40_epochs",
-    "dataset": "sklearn_digits",
-    "architecture": "MLPClassifier",
-    "hidden_layers": [
-      32
-    ],
-    "training_epochs_budget": 40,
-    "test_accuracy": 0.95,
-    "test_log_loss": 0.196386,
+    "experiment": "small_random_forest_50_trees",
+    "dataset": "UCI Wine Quality Red Wine CSV",
+    "dataset_file": "winequality-red.csv",
+    "dataset_source": "https://archive.ics.uci.edu/ml/datasets/wine+quality",
+    "target_definition": "quality >= 6 is labeled as high quality",
+    "architecture": "RandomForestClassifier",
+    "n_estimators": 50,
+    "max_depth": 8,
+    "test_accuracy": 0.76875,
+    "test_log_loss": 0.456719,
     "co2_emitted_kg": 1.4e-08,
-    "duration_seconds": 1.63,
-    "accuracy_per_kg_co2": 67857142.86
+    "duration_seconds": 1.635,
+    "accuracy_per_kg_co2": 54910714.29
   },
   {
-    "experiment": "deeper_mlp_120_epochs",
-    "dataset": "sklearn_digits",
-    "architecture": "MLPClassifier",
-    "hidden_layers": [
-      128,
-      64
-    ],
-    "training_epochs_budget": 120,
-    "test_accuracy": 0.969444,
-    "test_log_loss": 0.135974,
-    "co2_emitted_kg": 2.31e-08,
-    "duration_seconds": 2.32,
-    "accuracy_per_kg_co2": 41967272.73
+    "experiment": "larger_random_forest_400_trees",
+    "dataset": "UCI Wine Quality Red Wine CSV",
+    "dataset_file": "winequality-red.csv",
+    "dataset_source": "https://archive.ics.uci.edu/ml/datasets/wine+quality",
+    "target_definition": "quality >= 6 is labeled as high quality",
+    "architecture": "RandomForestClassifier",
+    "n_estimators": 400,
+    "max_depth": null,
+    "test_accuracy": 0.796875,
+    "test_log_loss": 0.397959,
+    "co2_emitted_kg": 2.1e-08,
+    "duration_seconds": 2.184,
+    "accuracy_per_kg_co2": 37946428.57
   },
   {
     "experiment": "comparison_summary",
-    "accuracy_gain_deeper_minus_compact": 0.019444,
-    "co2_gain_deeper_minus_compact_kg": 9.1e-09,
-    "interpretation": "The deeper setup improved accuracy, but the added CO2 should be justified against the size of that gain."
+    "accuracy_gain_larger_minus_smaller": 0.028125,
+    "co2_gain_larger_minus_smaller_kg": 7e-09,
+    "interpretation": "The larger Random Forest improved accuracy, but the added CO2 should be justified against the size of that gain."
   }
 ]
