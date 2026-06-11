@@ -1,0 +1,37 @@
+[
+  {
+    "experiment": "compact_mlp_40_epochs",
+    "dataset": "sklearn_digits",
+    "architecture": "MLPClassifier",
+    "hidden_layers": [
+      32
+    ],
+    "training_epochs_budget": 40,
+    "test_accuracy": 0.95,
+    "test_log_loss": 0.196386,
+    "co2_emitted_kg": 1.4e-08,
+    "duration_seconds": 1.63,
+    "accuracy_per_kg_co2": 67857142.86
+  },
+  {
+    "experiment": "deeper_mlp_120_epochs",
+    "dataset": "sklearn_digits",
+    "architecture": "MLPClassifier",
+    "hidden_layers": [
+      128,
+      64
+    ],
+    "training_epochs_budget": 120,
+    "test_accuracy": 0.969444,
+    "test_log_loss": 0.135974,
+    "co2_emitted_kg": 2.31e-08,
+    "duration_seconds": 2.32,
+    "accuracy_per_kg_co2": 41967272.73
+  },
+  {
+    "experiment": "comparison_summary",
+    "accuracy_gain_deeper_minus_compact": 0.019444,
+    "co2_gain_deeper_minus_compact_kg": 9.1e-09,
+    "interpretation": "The deeper setup improved accuracy, but the added CO2 should be justified against the size of that gain."
+  }
+]
